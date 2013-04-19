@@ -12,6 +12,7 @@
 body {
   background-image: url('/images/bg.png');
   position: relative;
+  font-family: 'CalligraffitiRegular';
 }
 
 #main {
@@ -22,18 +23,27 @@ body {
 }
 
 h1 {
-  font-family: 'CalligraffitiRegular';
   font-size: 72px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 input {
+  margin-top: 20px;
+  font-family: 'CalligraffitiRegular';
   background: transparent;
   border: 0;
-  font-size: 40px;
-  font-family: 'CalligraffitiRegular';
+  font-size: 36px;
   width: 100px;
+  text-align: center;
+}
+
+span.dash {
+  display: inline-block;
+  font-size: 80px;
+  padding-top: 50px;
+  line-height: 10px;
+  margin: 0 30px;
 }
 
 input:focus {
