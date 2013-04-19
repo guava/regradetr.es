@@ -34,7 +34,7 @@ input {
   background: transparent;
   border: 0;
   font-size: 36px;
-  width: 100px;
+  width: 150px;
   text-align: center;
 }
 
@@ -44,6 +44,18 @@ span.dash {
   padding-top: 50px;
   line-height: 10px;
   margin: 0 30px;
+}
+
+form {
+  margin-bottom: 5em;
+}
+
+small {
+  font-size: 16px;
+}
+
+img {
+  margin-top: -10px;
 }
 
 input:focus {
