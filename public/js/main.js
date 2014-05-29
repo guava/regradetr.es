@@ -8,12 +8,18 @@ function CrossMultiplicationCtrl($scope) {
   $scope.totalLines = 1;
 
   $scope.calculateD = function() {
-    if(!$scope.checkValidity($scope.a))
-      return '';
-    if(!$scope.checkValidity($scope.b))
-      return '';
-    if(!$scope.checkValidity($scope.c))
-      return '';
+    if(!$scope.checkValidity($scope.a)) {
+      $scope.d = '';
+      return;
+    }
+    if(!$scope.checkValidity($scope.b)) {
+      $scope.d = '';
+      return;
+    }
+    if(!$scope.checkValidity($scope.c)) {
+      $scope.d = '';
+      return;
+    }
 
     var d = undefined;
 
