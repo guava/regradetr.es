@@ -14,7 +14,13 @@ function CrossMultiplicationCtrl($scope) {
     if(!$scope.checkValidity($scope.c))
       return '';
 
-    var d = ($scope.parseNumber($scope.c) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.a);
+    var d = undefined;
+
+    if($scope.proportionType == 'direct') {
+      d = ($scope.parseNumber($scope.c) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.a);
+    } else {
+      d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.b);
+    }
 
     $scope.d = $scope.numberToString(d);
   };
