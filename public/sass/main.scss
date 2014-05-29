@@ -226,40 +226,30 @@ h1 {
   }
   .input-4 {
     position: relative;
+    overflow: hidden;
     margin: 30px 0 0 30px;
+    padding-top: 60px;
     border-color: rgb(248, 106, 113);
     color: rgb(248,106,113);
     font-weight: 500;
-    padding-top: 60px;
-    overflow: hidden;
-
     &.two-lines {
       padding-top: 55px;
       line-height: .9em;
     }
-
     &.three-lines {
       padding-top: 45px;
       line-height: .9em;
     }
-
+    &.bomb {
+      background-image: url('/images/bomb@2x.png');
+      background-size: 76px 64px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
     &:-moz-placeholder            { color: rgb(248,106,113); }
     &::-moz-placeholder           { color: rgb(248,106,113); }
     &:-ms-input-placeholder       { color: rgb(248,106,113); }
     &::-webkit-input-placeholder  { color: rgb(248,106,113); }
-  }
-}
-
-footer {
-  float: left;
-  clear: both;
-  margin-top: 20px;
-  width: 100%;
-  height: 69px;
-  a {
-    display: block;
-    margin: 0 auto;
-    width: 42px;
   }
 }
 
@@ -271,21 +261,34 @@ footer {
   background-position: -3px -48px;
 }
 
-.byguava {
-  display: inline-block;
-  margin: 12px auto 0;
+footer {
+  float: left;
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 30px;
   width: 100%;
-  height: 13px;
-  color: rgb(102, 102, 102);
-  text-align: center;
-  .love {
+  height: 69px;
+  a {
+    display: block;
+    margin: 0 auto;
+    width: 42px;
+  }
+  .byguava {
     display: inline-block;
-    background-position: 0px -96px;
-    width: 13px;
+    margin: 6px auto 0;
+    width: 100%;
     height: 13px;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden;
+    color: rgb(102, 102, 102);
+    text-align: center;
+    .love {
+      display: inline-block;
+      overflow: hidden;
+      width: 13px;
+      height: 13px;
+      background-position: 0px -96px;
+      font-size: 0;
+      line-height: 0;
+    }
   }
 }
 
@@ -362,10 +365,15 @@ footer {
     .input-4 {
       margin-top: 10px;
       margin-left: 10px;
+      padding-top: 43px;
+      &.two-lines {
+        padding-top: 38px;
+        line-height: .9em;
+      }
+      &.three-lines {
+        padding-top: 28px;
+        line-height: .9em;
+      }
     }
-  }
-  footer {
-    margin-top: 15px;
-    margin-bottom: 30px;
   }
 }
