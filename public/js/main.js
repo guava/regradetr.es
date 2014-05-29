@@ -23,10 +23,10 @@ function CrossMultiplicationCtrl($scope) {
       d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.b);
     }
     $scope.d = $scope.numberToString(d);
-
-    if($scope.d.length > 12) {
+    var value = $scope.numberToString(d).replace(',', '');
+    if(value.length > 12) {
       $scope.totalLines = 3;
-    } else if($scope.d.length > 6) {
+    } else if(value.length > 6) {
       $scope.totalLines = 2;
     } else {
       $scope.totalLines = 1;
