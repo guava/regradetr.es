@@ -4,8 +4,9 @@ function CrossMultiplicationCtrl($scope) {
   $scope.a = undefined;
   $scope.b = undefined;
   $scope.c = undefined;
+  $scope.d = undefined;
 
-  $scope.d = function() {
+  $scope.calculateD = function() {
     if(!$scope.checkValidity($scope.a))
       return '';
     if(!$scope.checkValidity($scope.b))
@@ -15,7 +16,7 @@ function CrossMultiplicationCtrl($scope) {
 
     var d = ($scope.parseNumber($scope.c) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.a);
 
-    return $scope.numberToString(d);
+    $scope.d = $scope.numberToString(d);
   };
 
   $scope.checkValidity = function(value) {
@@ -40,4 +41,8 @@ function CrossMultiplicationCtrl($scope) {
   $scope.changeProportionType = function(type) {
     $scope.proportionType = type;
   }
+
+  $scope.$watch('a + b + c + proportionType', function(newVal, oldVal) {
+    $scope.calculateD();
+  })
 }
