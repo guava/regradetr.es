@@ -28,13 +28,13 @@
       <h1 class="text">regrade<strong>três</strong></h1>
     </header>
     <div class="toggles clearfix">
-      <a class="toggle-direct active clearfix">
+      <a class="toggle-direct clearfix" data-ng-click="changeProportionType('direct')" data-ng-class="{active: proportionType == 'direct'}">
         <div class="container clearfix">
           <p class="text">Proporção direta</p>
           <span class="graph icon-direct"></span>
         </div>
       </a>
-      <a class="toggle-reverse clearfix">
+      <a class="toggle-reverse clearfix" data-ng-click="changeProportionType('reverse')" data-ng-class="{active: proportionType == 'reverse'}">
         <div class="container clearfix">
           <span class="graph icon-reverse"></span>
           <p class="text">Proporção inversa</p>

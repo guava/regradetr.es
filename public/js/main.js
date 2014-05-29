@@ -1,4 +1,6 @@
 function CrossMultiplicationCtrl($scope) {
+  $scope.proportionType = 'direct';
+
   $scope.a = undefined;
   $scope.b = undefined;
   $scope.c = undefined;
@@ -33,5 +35,9 @@ function CrossMultiplicationCtrl($scope) {
     var strValue = number + '';
 
     return strValue.replace('.', ',').substr(0, 6);
+  }
+
+  $scope.changeProportionType = function(type) {
+    $scope.proportionType = type;
   }
 }
