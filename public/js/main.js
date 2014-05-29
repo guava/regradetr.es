@@ -1,9 +1,12 @@
 function CrossMultiplicationCtrl($scope) {
+  $scope.proportionType = 'direct';
+
   $scope.a = undefined;
   $scope.b = undefined;
   $scope.c = undefined;
+  $scope.d = undefined;
 
-  $scope.d = function() {
+  $scope.calculateD = function() {
     if(!$scope.checkValidity($scope.a))
       return '';
     if(!$scope.checkValidity($scope.b))
@@ -11,9 +14,15 @@ function CrossMultiplicationCtrl($scope) {
     if(!$scope.checkValidity($scope.c))
       return '';
 
-    var d = ($scope.parseNumber($scope.c) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.a);
+    var d = undefined;
 
-    return $scope.numberToString(d);
+    if($scope.proportionType == 'direct') {
+      d = ($scope.parseNumber($scope.c) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.a);
+    } else {
+      d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.b);
+    }
+
+    $scope.d = $scope.numberToString(d);
   };
 
   $scope.checkValidity = function(value) {
@@ -34,4 +43,12 @@ function CrossMultiplicationCtrl($scope) {
 
     return strValue.replace('.', ',').substr(0, 6);
   }
+
+  $scope.changeProportionType = function(type) {
+    $scope.proportionType = type;
+  }
+
+  $scope.$watch('a + b + c + proportionType', function(newVal, oldVal) {
+    $scope.calculateD();
+  })
 }
