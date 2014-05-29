@@ -681,7 +681,15 @@ h1 {
   margin: 30px 0 0 30px;
   border-color: #f86a71;
   color: #f86a71;
-  font-weight: 500; }
+  font-weight: 500;
+  padding-top: 65px;
+  overflow: hidden; }
+  .inputs .input-4.two-lines {
+    padding-top: 55px;
+    line-height: .9em; }
+  .inputs .input-4.three-lines {
+    padding-top: 45px;
+    line-height: .9em; }
   .inputs .input-4:-moz-placeholder {
     color: #f86a71; }
   .inputs .input-4::-moz-placeholder {
@@ -694,7 +702,7 @@ h1 {
 footer {
   float: left;
   clear: both;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   height: 69px; }
   footer a {

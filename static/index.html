@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/images/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="120x120" href="/images/touch-icon@2x.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/touch-icon-ipad@2x.png">
-    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6137892/654264/css/fonts.css" />
   </head>
 
@@ -43,10 +43,11 @@
     </div>
     <div class="inputs clearfix">
       <form>
-        <input class="input input-1" type="text" placeholder="1" data-ng-model="a" autofocus>
-        <input class="input input-2" type="text" placeholder="2" data-ng-model="c">
-        <input class="input input-3" type="text" placeholder="3" data-ng-model="b">
-        <input class="input input-4" type="text" placeholder="x" readonly="readonly" data-ng-model="d">
+        <input class="input input-1" type="text" placeholder="1" maxlength="5" data-ng-model="a" autofocus>
+        <input class="input input-2" type="text" placeholder="2" maxlength="5" data-ng-model="c">
+        <input class="input input-3" type="text" placeholder="3" maxlength="5" data-ng-model="b">
+        <textarea class="input input-4" data-ng-class="{'two-lines': totalLines == 2, 'three-lines': totalLines == 3}" placeholder="x" readonly="readonly" data-ng-model="d">
+        </textarea>
       </form>
     </div>
     <footer class="container clearfix">

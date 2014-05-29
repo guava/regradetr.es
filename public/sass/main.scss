@@ -230,6 +230,19 @@ h1 {
     border-color: rgb(248, 106, 113);
     color: rgb(248,106,113);
     font-weight: 500;
+    padding-top: 65px;
+    overflow: hidden;
+
+    &.two-lines {
+      padding-top: 55px;
+      line-height: .9em;
+    }
+
+    &.three-lines {
+      padding-top: 45px;
+      line-height: .9em;
+    }
+
     &:-moz-placeholder            { color: rgb(248,106,113); }
     &::-moz-placeholder           { color: rgb(248,106,113); }
     &:-ms-input-placeholder       { color: rgb(248,106,113); }
@@ -240,7 +253,7 @@ h1 {
 footer {
   float: left;
   clear: both;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   height: 69px;
   a {

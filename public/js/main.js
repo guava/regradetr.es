@@ -5,6 +5,7 @@ function CrossMultiplicationCtrl($scope) {
   $scope.b = undefined;
   $scope.c = undefined;
   $scope.d = undefined;
+  $scope.totalLines = 1;
 
   $scope.calculateD = function() {
     if(!$scope.checkValidity($scope.a))
@@ -21,8 +22,15 @@ function CrossMultiplicationCtrl($scope) {
     } else {
       d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.b);
     }
-
     $scope.d = $scope.numberToString(d);
+
+    if($scope.d.length > 12) {
+      $scope.totalLines = 3;
+    } else if($scope.d.length > 6) {
+      $scope.totalLines = 2;
+    } else {
+      $scope.totalLines = 1;
+    }
   };
 
   $scope.checkValidity = function(value) {
@@ -39,9 +47,13 @@ function CrossMultiplicationCtrl($scope) {
   }
 
   $scope.numberToString = function(number) {
-    var strValue = number + '';
+    var strValue = number.toFixed(2);
+    var pointPosition = strValue.indexOf('.');
+    if(strValue.substring(pointPosition + 1) == '00') {
+      strValue = strValue.substring(0, pointPosition);
+    }
 
-    return strValue.replace('.', ',').substr(0, 6);
+    return strValue.replace('.', ',');
   }
 
   $scope.changeProportionType = function(type) {
