@@ -71,4 +71,17 @@ function CrossMultiplicationCtrl($scope) {
   })
 }
 
-$('.input-1, .input-2, .input-3').numeric({decimal: ','});
+$('.input-1, .input-2, .input-3').on('keypress', function(event) {
+  var controlKeys = [8, 9, 13, 35, 36, 37, 39,44,110,190];
+  var isControlKey = controlKeys.join(",").match(new RegExp(event.which));
+
+  if (!event.which || // Control keys in most browsers. e.g. Firefox tab is 0
+      event.metaKey ||
+      (48 <= event.which && event.which <= 57) || // Always 0 through 9
+      (96 <= event.which && event.which <= 106) || // Always 0 through 9 from number section
+      isControlKey) { // Opera assigns values for control keys.
+    return;
+  } else {
+    event.preventDefault();
+  }
+});
