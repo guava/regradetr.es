@@ -70,3 +70,5 @@ function CrossMultiplicationCtrl($scope) {
     $scope.calculateD();
   })
 }
+
+$('.input-1, .input-2, .input-3').numeric({decimal: ','});
