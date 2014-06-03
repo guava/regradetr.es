@@ -46,7 +46,7 @@
         <input class="input input-1" type="text" placeholder="a" maxlength="6" data-ng-model="a" autofocus>
         <input class="input input-2" type="text" placeholder="c" maxlength="6" data-ng-model="c">
         <input class="input input-3" type="text" placeholder="b" maxlength="6" data-ng-model="b">
-        <textarea class="input input-4" data-ng-class="{'two-lines': totalLines == 2, 'three-lines': totalLines == 3}" placeholder="x" readonly="readonly" data-ng-model="d">
+        <textarea class="input input-4" data-ng-class="{'two-lines': totalLines == 2, 'three-lines': totalLines == 3, 'bomb': divisionByZero == true}" placeholder="x" readonly="readonly" data-ng-model="d">
         </textarea>
       </form>
     </div>

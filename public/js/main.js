@@ -6,6 +6,7 @@ function CrossMultiplicationCtrl($scope) {
   $scope.c = undefined;
   $scope.d = undefined;
   $scope.totalLines = 1;
+  $scope.divisionByZero = false;
 
   $scope.calculateD = function() {
     if(!$scope.checkValidity($scope.a)) {
@@ -19,6 +20,18 @@ function CrossMultiplicationCtrl($scope) {
     if(!$scope.checkValidity($scope.c)) {
       $scope.d = '';
       return;
+    }
+
+    if($scope.parseNumber($scope.a) == 0.0 && $scope.proportionType == 'direct') {
+      $scope.divisionByZero = true;
+      $scope.d = ''
+      return;
+    } else if($scope.parseNumber($scope.b) == 0.0 && $scope.proportionType != 'direct') {
+      $scope.divisionByZero = true;
+      $scope.d = ''
+      return;
+    } else {
+      $scope.divisionByZero = false;
     }
 
     var d = undefined;
@@ -43,7 +56,7 @@ function CrossMultiplicationCtrl($scope) {
     if(value === undefined)
       return false;
 
-    return $scope.parseNumber(value);
+    return !isNaN($scope.parseNumber(value));
   };
 
   $scope.parseNumber = function(value) {
