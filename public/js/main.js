@@ -73,8 +73,9 @@ function CrossMultiplicationCtrl($scope) {
 
 $('.input-1, .input-2, .input-3').on('keypress', function(event) {
   var validKeys = "-1234567890,"
+  var key = event.key || String.fromCharCode(event.which);
 
-  if (!event.which || event.metaKey || (validKeys.indexOf(event.key)) >= 0) {
+  if (!event.which || event.metaKey || (validKeys.indexOf(key)) >= 0) {
     return;
   } else {
     event.preventDefault();
