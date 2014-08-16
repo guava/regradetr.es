@@ -1,5 +1,17 @@
+// ——————————————————————————————————————————————————————————
+//                      Regra de Três
+// ——————————————————————————————————————————————————————————
+
+
+//     Imports
+// ———————————————
+
 @import "index-grid";
 @import "standardize";
+
+
+//     Base
+// ———————————————
 
 body {
   background-color: rgb(255, 255, 255);
@@ -11,21 +23,21 @@ body {
   line-height: 1;
 }
 
-strong {
-  font-weight: 500;
-}
-
-.head {
-  overflow: hidden;
-  margin: 40px auto 0;
-  width: 370px;
-  height: 48px;
-}
-
 .graph {
   background-image: url('/images/graphics@2x.png');
   background-size: 48px 160px;
   background-repeat: no-repeat;
+}
+
+
+//     Header
+// ——————————————
+
+.head {
+  overflow: hidden;
+  margin: 40px auto 0;
+  width: 380px;
+  height: 48px;
 }
 
 .symbol {
@@ -45,14 +57,23 @@ h1 {
   float: left;
   margin-left: 12px;
   padding-top: 3px;
-  width: 310px;
+  width: 320px;
   height: 48px;
   border-radius: 3px;
   color: rgb(212, 30, 88);
   text-transform: uppercase;
   letter-spacing: -3px;
   font-size: 42px;
+
+  strong {
+    font-weight: 500;
+    margin-left: 3px;
+  }
 }
+
+
+//     Toggles
+// ———————————————
 
 .toggles {
   margin: 40px auto 0;
@@ -66,11 +87,13 @@ h1 {
   height: 38px;
   border-bottom: 1px solid rgb(204, 204, 204);
   cursor: pointer;
+
   .container {
     float: right;
     width: 200px;
     height: 32px;
   }
+
   .text {
     float: right;
     margin-right: 46px;
@@ -81,6 +104,7 @@ h1 {
     text-transform: uppercase;
     line-height: 1.23;
   }
+
   .icon-direct {
     display: block;
     float: right;
@@ -99,11 +123,13 @@ h1 {
   height: 38px;
   border-bottom: 1px solid rgb(204, 204, 204);
   cursor: pointer;
+
   .container {
     float: right;
     width: 200px;
     height: 32px;
   }
+
   .text {
     float: left;
     margin: 1px 0 0 6px;
@@ -113,6 +139,7 @@ h1 {
     text-transform: uppercase;
     line-height: 1.23;
   }
+
   .icon-reverse {
     display: block;
     float: left;
@@ -125,11 +152,6 @@ h1 {
 }
 
 .toggle-direct, .toggle-reverse {
-  // &:hover {
-  //   p {
-  //     color: rgb(212, 30, 88);
-  //   }
-  // }
   &:focus, &:active {
     .container {
       -webkit-transform: scale(0.9,0.9);
@@ -142,28 +164,9 @@ h1 {
   }
 }
 
-.inputs {
-  margin: 40px auto 0;
-  width: 400px;
-  height: 400px;
-  .input {
-    display: block;
-    float: left;
-    padding: 0 10px;
-    width: 180px;
-    height: 180px;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 100px;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    letter-spacing: -3px;
-    font-size: 42px;
-  }
-}
-
 .active {
   border-bottom: 2px solid rgb(212, 30, 88);
+
   .text {
     color: rgb(212, 30, 88);
     font-weight: 500;
@@ -182,36 +185,63 @@ h1 {
   }
 }
 
+
+//     Inputs
+// ——————————————
+
 .inputs {
+  margin: 40px auto 0;
+  width: 400px;
+  height: 400px;
+
   input {
-    background-color: transparent;
-    -webkit-transition: box-shadow 0.3s ease;
-       -moz-transition: box-shadow 0.3s ease;
-         -o-transition: box-shadow 0.3s ease;
-            transition: box-shadow 0.3s ease;
     &:-moz-placeholder            { color: rgb(204,204,204); }
     &::-moz-placeholder           { color: rgb(204,204,204); }
     &:-ms-input-placeholder       { color: rgb(204,204,204); }
     &::-webkit-input-placeholder  { color: rgb(204,204,204); }
   }
+
+  .input {
+    display: block;
+    float: left;
+    padding: 0 10px;
+    width: 180px;
+    height: 180px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 100px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    letter-spacing: -3px;
+    font-size: 42px;
+    background-color: transparent;
+    -webkit-transition: box-shadow 0.3s ease;
+       -moz-transition: box-shadow 0.3s ease;
+         -o-transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease;
+  }
+
   .input-1 {
     position: relative;
     margin-left: 5px;
     border-color: rgb(166, 167, 41);
     font-weight: 300;
   }
+
   .input-2 {
     position: relative;
     margin-left: 30px;
     border-color: rgb(166, 167, 41);
     font-weight: 300;
   }
+
   .input-1, .input-2 {
     &:focus {
       -webkit-box-shadow: 0 0 5px rgba(166, 167, 41, 1);
               box-shadow: 0 0 5px rgba(166, 167, 41, 1);
     }
   }
+
   .input-3 {
     position: relative;
     clear: both;
@@ -224,6 +254,7 @@ h1 {
               box-shadow: 0 0 5px rgba(248, 106, 113, 1);
     }
   }
+
   .input-4 {
     position: relative;
     overflow: hidden;
@@ -232,20 +263,24 @@ h1 {
     border-color: rgb(248, 106, 113);
     color: rgb(248,106,113);
     font-weight: 500;
+
     &.two-lines {
       padding-top: 55px;
       line-height: .9em;
     }
+
     &.three-lines {
       padding-top: 45px;
       line-height: .9em;
     }
+
     &.bomb {
       background-image: url('/images/bomb@2x.png');
       background-size: 76px 64px;
       background-position: center;
       background-repeat: no-repeat;
     }
+
     &:-moz-placeholder            { color: rgb(248,106,113); }
     &::-moz-placeholder           { color: rgb(248,106,113); }
     &:-ms-input-placeholder       { color: rgb(248,106,113); }
@@ -253,13 +288,9 @@ h1 {
   }
 }
 
-.symbol-guava {
-  display: block;
-  overflow: hidden;
-  width: 42px;
-  height: 48px;
-  background-position: -3px -48px;
-}
+
+//     Footer
+// ——————————————
 
 footer {
   float: left;
@@ -268,11 +299,21 @@ footer {
   margin-bottom: 30px;
   width: 100%;
   height: 69px;
+
   a {
     display: block;
     margin: 0 auto;
     width: 42px;
   }
+
+  .symbol-guava {
+    display: block;
+    overflow: hidden;
+    width: 42px;
+    height: 48px;
+    background-position: -3px -48px;
+  }
+
   .byguava {
     display: inline-block;
     margin: 6px auto 0;
@@ -280,6 +321,7 @@ footer {
     height: 13px;
     color: rgb(102, 102, 102);
     text-align: center;
+
     .love {
       display: inline-block;
       overflow: hidden;
@@ -292,14 +334,21 @@ footer {
   }
 }
 
+
+//     Mobile
+// ——————————————
+
 @media (max-width: 768px) {
+
   .head {
     margin-top: 20px;
     width: 36px;
     height: 36px;
+
     h1 {
       display: none;
     }
+
     .logo {
       width: 36px;
       height: 36px;
@@ -310,40 +359,49 @@ footer {
   .toggles {
     margin-top: 20px;
     width: 280px;
+
     .toggle-direct, .toggle-reverse {
       width: 140px;
     }
+
     .toggle-direct {
       .container {
         width: 140px;
       }
+
       .text {
         width: 100px;
       }
+
       .icon-direct {
         clear: none;
         margin-right: 8px;
       }
     }
+
     .toggle-reverse {
       .container {
         width: 140px;
       }
+
       .text {
         float: right;
         margin-top: 0;
         margin-left: 0;
         width: 100px;
       }
+
       .icon-reverse {
         margin-left: 8px;
       }
     }
   }
+
   .inputs {
     margin-top: 25px;
     width: 280px;
     height: 265px;
+
     .input {
       width: 128px;
       height: 128px;
@@ -351,25 +409,31 @@ footer {
       font-size: 30px;
     }
   }
+
   .inputs {
     .input-1 {
       margin-left: 7px;
     }
+
     .input-2 {
       margin-left: 10px;
     }
+
     .input-3 {
       margin-top: 10px;
       margin-left: 7px;
     }
+
     .input-4 {
       margin-top: 10px;
       margin-left: 10px;
       padding-top: 43px;
+
       &.two-lines {
         padding-top: 38px;
         line-height: .9em;
       }
+
       &.three-lines {
         padding-top: 28px;
         line-height: .9em;
