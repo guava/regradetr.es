@@ -622,9 +622,20 @@ h1 {
     background-position: 0px -112px; }
 
 .inputs {
+  position: relative;
   margin: 40px auto 0;
   width: 400px;
   height: 400px; }
+  .inputs::after {
+    content: '';
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: absolute;
+    left: 157px;
+    top: 153px;
+    background-image: url("/images/cross@2x.png");
+    background-size: 84px; }
   .inputs input:-moz-placeholder {
     color: #cccccc; }
   .inputs input::-moz-placeholder {
@@ -773,26 +784,31 @@ footer {
     margin-top: 25px;
     width: 280px;
     height: 265px; }
+    .inputs::after {
+      width: 48px;
+      height: 48px;
+      background-size: 48px;
+      top: 109px;
+      left: 116px; }
     .inputs .input {
       width: 128px;
       height: 128px;
       letter-spacing: -2px;
       font-size: 30px; }
-
-  .inputs .input-1 {
-    margin-left: 7px; }
-  .inputs .input-2 {
-    margin-left: 10px; }
-  .inputs .input-3 {
-    margin-top: 10px;
-    margin-left: 7px; }
-  .inputs .input-4 {
-    margin-top: 10px;
-    margin-left: 10px;
-    padding-top: 43px; }
-    .inputs .input-4.two-lines {
-      padding-top: 38px;
-      line-height: .9em; }
-    .inputs .input-4.three-lines {
-      padding-top: 28px;
-      line-height: .9em; } }
+    .inputs .input-1 {
+      margin-left: 7px; }
+    .inputs .input-2 {
+      margin-left: 10px; }
+    .inputs .input-3 {
+      margin-top: 10px;
+      margin-left: 7px; }
+    .inputs .input-4 {
+      margin-top: 10px;
+      margin-left: 10px;
+      padding-top: 43px; }
+      .inputs .input-4.two-lines {
+        padding-top: 38px;
+        line-height: .9em; }
+      .inputs .input-4.three-lines {
+        padding-top: 28px;
+        line-height: .9em; } }

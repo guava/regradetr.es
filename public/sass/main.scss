@@ -190,9 +190,22 @@ h1 {
 // ——————————————
 
 .inputs {
+  position: relative;
   margin: 40px auto 0;
   width: 400px;
   height: 400px;
+
+  &::after {
+    content: '';
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: absolute;
+    left: 157px;
+    top: 153px;
+    background-image: url('/images/cross@2x.png');
+    background-size: 84px;
+  }
 
   input {
     &:-moz-placeholder            { color: rgb(204,204,204); }
@@ -402,15 +415,21 @@ footer {
     width: 280px;
     height: 265px;
 
+    &::after {
+      width: 48px;
+      height: 48px;
+      background-size: 48px;
+      top: 109px;
+      left: 116px;
+    }
+
     .input {
       width: 128px;
       height: 128px;
       letter-spacing: -2px;
       font-size: 30px;
     }
-  }
 
-  .inputs {
     .input-1 {
       margin-left: 7px;
     }
