@@ -22,27 +22,27 @@
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6137892/654264/css/fonts.css" />
   </head>
 
-  <body class="body index clearfix" data-ng-app data-ng-controller="CrossMultiplicationCtrl">
-    <header class="container head clearfix">
+  <body class="body index" data-ng-app data-ng-controller="CrossMultiplicationCtrl">
+    <header class="container head">
       <span class="graph symbol logo"></span>
       <h1 class="text">regrade<strong>três</strong></h1>
     </header>
     <main>
-      <div class="toggles clearfix">
-        <a class="toggle-direct clearfix" data-ng-click="changeProportionType('direct')" data-ng-class="{active: proportionType == 'direct'}">
-          <div class="container clearfix">
+      <div class="toggles">
+        <a class="toggle-direct" data-ng-click="changeProportionType('direct')" data-ng-class="{active: proportionType == 'direct'}">
+          <div class="container">
             <p class="text">Proporção direta</p>
             <span class="graph icon-direct"></span>
           </div>
         </a>
-        <a class="toggle-reverse clearfix" data-ng-click="changeProportionType('reverse')" data-ng-class="{active: proportionType == 'reverse'}">
-          <div class="container clearfix">
+        <a class="toggle-reverse" data-ng-click="changeProportionType('reverse')" data-ng-class="{active: proportionType == 'reverse'}">
+          <div class="container">
             <span class="graph icon-reverse"></span>
             <p class="text">Proporção inversa</p>
           </div>
         </a>
       </div>
-      <div class="inputs clearfix">
+      <div class="inputs">
         <form>
           <input class="input input-1" type="text" placeholder="a" maxlength="6" data-ng-model="a" autofocus>
           <input class="input input-2" type="text" placeholder="c" maxlength="6" data-ng-model="c">
@@ -52,7 +52,7 @@
         </form>
       </div>
     </main>
-    <footer class="container clearfix">
+    <footer class="container">
       <a href="http://guava.com.br" target="_blank"><span class="graph symbol-guava"></span></a>
       <p class="text byguava"><span class="graph love"></span> — Guava.</p>
     </footer>
