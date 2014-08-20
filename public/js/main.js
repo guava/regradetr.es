@@ -26,7 +26,7 @@ function CrossMultiplicationCtrl($scope) {
       $scope.divisionByZero = true;
       $scope.d = ''
       return;
-    } else if($scope.parseNumber($scope.b) == 0.0 && $scope.proportionType != 'direct') {
+    } else if($scope.parseNumber($scope.c) == 0.0 && $scope.proportionType != 'direct') {
       $scope.divisionByZero = true;
       $scope.d = ''
       return;
@@ -37,9 +37,9 @@ function CrossMultiplicationCtrl($scope) {
     var d = undefined;
 
     if($scope.proportionType == 'direct') {
-      d = ($scope.parseNumber($scope.c) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.a);
+      d = ($scope.parseNumber($scope.b) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.a);
     } else {
-      d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.b);
+      d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.c);
     }
     $scope.d = $scope.numberToString(d);
     var value = $scope.numberToString(d).replace(',', '');
