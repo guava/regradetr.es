@@ -38,8 +38,10 @@ function CrossMultiplicationCtrl($scope) {
 
     if($scope.proportionType == 'direct') {
       d = ($scope.parseNumber($scope.b) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.a);
+      ga('send', 'calculate', 'direct');
     } else {
       d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.c);
+      ga('send', 'calculate', 'inverse');
     }
     $scope.d = $scope.numberToString(d);
     var value = $scope.numberToString(d).replace(',', '');
@@ -81,13 +83,12 @@ function CrossMultiplicationCtrl($scope) {
 
   $scope.$watch('a + b + c + proportionType', function(newVal, oldVal) {
     $scope.calculateD();
-  })
+  });
 }
 
 $('.input-1, .input-2, .input-3').on('keypress', function(event) {
   var validKeys = "-1234567890,"
   var key = event.key || String.fromCharCode(event.which);
-
   if (!event.which || event.metaKey || (validKeys.indexOf(key)) >= 0 || key.length > 1) {
     return;
   } else {
