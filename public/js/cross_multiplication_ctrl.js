@@ -10,6 +10,10 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
   $scope.totalLines = 1;
   $scope.divisionByZero = false;
 
+  $scope.initialize = function() {
+    AnalyticsService.initialize();
+  }
+
   $scope.calculateD = function() {
     if(!$scope.checkValidity($scope.a)) {
       $scope.d = '';
@@ -83,23 +87,20 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
     $scope.proportionType = type;
   }
 
+  $scope.keypress = function(event) {
+    console.log('keypress')
+    var validKeys = "-1234567890,"
+    var key = event.key || String.fromCharCode(event.which);
+    if (!event.which || event.metaKey || (validKeys.indexOf(key)) >= 0 || key.length > 1) {
+      return;
+    } else {
+      event.preventDefault();
+    }
+  }
+
   $scope.$watch('a + b + c + proportionType', function(newVal, oldVal) {
     $scope.calculateD();
   });
 
-  $scope.initialize = function() {
-    AnalyticsService.initialize();
-  }
-
   $scope.initialize();
 }
-
-$('.input-1, .input-2, .input-3').on('keypress', function(event) {
-  var validKeys = "-1234567890,"
-  var key = event.key || String.fromCharCode(event.which);
-  if (!event.which || event.metaKey || (validKeys.indexOf(key)) >= 0 || key.length > 1) {
-    return;
-  } else {
-    event.preventDefault();
-  }
-});

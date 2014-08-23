@@ -27,7 +27,7 @@
       <span class="graph symbol logo"></span>
       <h1 class="text">regrade<strong>três</strong></h1>
     </header>
-    <main  data-ng-controller="CrossMultiplicationCtrl">
+    <main data-ng-controller="CrossMultiplicationCtrl">
       <div class="toggles">
         <a class="toggle-direct" data-ng-click="changeProportionType('direct')" data-ng-class="{active: proportionType == 'direct'}">
           <div class="container">
@@ -44,9 +44,9 @@
       </div>
       <div class="inputs">
         <form>
-          <input class="input input-1" type="text" placeholder="a" maxlength="6" data-ng-model="a" autofocus>
-          <input class="input input-2" type="text" placeholder="b" maxlength="6" data-ng-model="b">
-          <input class="input input-3" type="text" placeholder="c" maxlength="6" data-ng-model="c">
+          <input class="input input-1" type="text" placeholder="a" maxlength="6" data-ng-model="a" data-ng-keypress="keypress($event)" autofocus>
+          <input class="input input-2" type="text" placeholder="b" maxlength="6" data-ng-model="b" data-ng-keypress="keypress($event)" >
+          <input class="input input-3" type="text" placeholder="c" maxlength="6" data-ng-model="c" data-ng-keypress="keypress($event)" >
           <textarea class="input input-4" data-ng-class="{'two-lines': totalLines == 2, 'three-lines': totalLines == 3, 'bomb': divisionByZero == true}" placeholder="x" readonly="readonly" data-ng-model="d">
           </textarea>
         </form>
