@@ -6,7 +6,7 @@ function AnalyticsServiceCreator() {
     ga('send', 'pageview');
   }
 
-  this.send = function(event, opt) {
-    ga('send', event, opt);
+  this.send = function(event, label, value) {
+    ga('send', 'event', event, label, value);
   }
 };
