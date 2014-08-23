@@ -15,44 +15,43 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
     AnalyticsService.initialize();
   }
 
+  $scope.dividend = function() {
+    if($scope.proportionType == 'direct') {
+      return $scope.c;
+    } else {
+      return $scope.a;
+    }
+  }
+
+  $scope.divisor = function() {
+    if($scope.proportionType == 'direct') {
+      return $scope.a;
+    } else {
+      return $scope.c;
+    }
+  }
+
   $scope.calculateD = function() {
-    if(!$scope.checkValidity($scope.a)) {
-      $scope.d = '';
-      return;
-    }
-    if(!$scope.checkValidity($scope.b)) {
-      $scope.d = '';
-      return;
-    }
-    if(!$scope.checkValidity($scope.c)) {
+    if(![$scope.a, $scope.b, $scope.c].every($scope.isValidInput)) {
       $scope.d = '';
       return;
     }
 
-    if($scope.parseNumber($scope.a) == 0.0 && $scope.proportionType == 'direct') {
+    if($scope.parseNumber($scope.divisor()) == 0.0) {
       $scope.divisionByZero = true;
       $scope.d = ''
-      return;
-    } else if($scope.parseNumber($scope.c) == 0.0 && $scope.proportionType != 'direct') {
-      $scope.divisionByZero = true;
-      $scope.d = ''
-      return;
+      return ;
     } else {
       $scope.divisionByZero = false;
     }
 
-    var d = undefined;
-
-    if($scope.proportionType == 'direct') {
-      d = ($scope.parseNumber($scope.b) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.a);
-      AnalyticsService.send('calculate', 'direct');
-    } else {
-      d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.c);
-      AnalyticsService.send('calculate', 'inverse');
-    }
+    var result = $scope.parseNumber($scope.b) *
+      $scope.parseNumber($scope.dividend()) / $scope.parseNumber($scope.divisor());
     
-    $scope.d = $scope.numberToString(d);
-    $scope.totalLines = $scope.countLines(d)
+    $scope.d = $scope.numberToString(result);
+    $scope.totalLines = $scope.countLines(result)
+
+    AnalyticsService.send('calculate', $scope.proportionType);
   };
 
   $scope.countLines = function(number) {
@@ -66,7 +65,7 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
     }
   };
 
-  $scope.checkValidity = function(value) {
+  $scope.isValidInput = function(value) {
     if(value === undefined)
       return false;
 
