@@ -9,6 +9,8 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
   $scope.d = undefined;
   $scope.totalLines = 1;
   $scope.divisionByZero = false;
+  $scope.countDirect = 0;
+  $scope.countInverse = 0;
 
   $scope.initialize = function() {
     AnalyticsService.initialize();
@@ -41,13 +43,14 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
     }
 
     var d = undefined;
-
     if($scope.proportionType == 'direct') {
       d = ($scope.parseNumber($scope.b) * $scope.parseNumber($scope.c)) / $scope.parseNumber($scope.a);
-      AnalyticsService.send('calculate', 'direct');
+      $scope.countDirect = $scope.countDirect + 1;
+      AnalyticsService.send('calculate', 'direct', $scope.countDirect);
     } else {
       d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.c);
-      AnalyticsService.send('calculate', 'inverse');
+      $scope.countInverse = $scope.countInverse + 1;
+      AnalyticsService.send('calculate', 'inverse', $scope.countInverse);
     }
     $scope.d = $scope.numberToString(d);
     var value = $scope.numberToString(d).replace(',', '');
