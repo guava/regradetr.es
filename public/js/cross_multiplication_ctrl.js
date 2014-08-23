@@ -1,4 +1,5 @@
-window.RegraDeTres.controller('CrossMultiplicationCtrl', ['$scope', 'AnalyticsService', CrossMultiplicationCtrl]);
+window.RegraDeTres.controller('CrossMultiplicationCtrl',
+  ['$scope', 'AnalyticsService', CrossMultiplicationCtrl]);
 
 function CrossMultiplicationCtrl($scope, AnalyticsService) {
   $scope.proportionType = 'direct';
@@ -49,14 +50,19 @@ function CrossMultiplicationCtrl($scope, AnalyticsService) {
       d = ($scope.parseNumber($scope.a) * $scope.parseNumber($scope.b)) / $scope.parseNumber($scope.c);
       AnalyticsService.send('calculate', 'inverse');
     }
+    
     $scope.d = $scope.numberToString(d);
-    var value = $scope.numberToString(d).replace(',', '');
-    if(value.length > 12) {
-      $scope.totalLines = 3;
+    $scope.totalLines = $scope.countLines(d)
+  };
+
+  $scope.countLines = function(number) {
+    var value = $scope.numberToString(number).replace(',', ''); 
+    if(value.length > 11) {
+      return 3;
     } else if(value.length > 6) {
-      $scope.totalLines = 2;
+      return 2;
     } else {
-      $scope.totalLines = 1;
+      return 1;
     }
   };
 
